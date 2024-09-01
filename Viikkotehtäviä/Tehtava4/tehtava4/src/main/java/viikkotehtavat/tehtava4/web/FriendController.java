@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class FriendController {
+
+    private List<Friend> friendList = new ArrayList<>();
 
     @GetMapping("/addfriend")
     public String showForm(Model model) {
@@ -17,8 +22,14 @@ public class FriendController {
     }
 
     @PostMapping("/addfriend")
-    public String submitForm(@ModelAttribute Friend friend, Model model) {
-        model.addAttribute("friend", friend);
-        return "resultform"; 
+    public String submitForm(@ModelAttribute Friend friend) {
+        friendList.add(friend);
+        return "redirect:/friends";
+    }
+
+    @GetMapping("/friends")
+    public String showFriends(Model model) {
+        model.addAttribute("friends", friendList);
+        return "friendlist";
     }
 }
