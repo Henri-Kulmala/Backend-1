@@ -16,8 +16,19 @@ public class CodeApplication {
 	@Bean
 	public CommandLineRunner demo(BookRepository repository) {
     return (args) -> {
-        repository.save(new Book("1984", "George Orwell", 1949, "978-0415249353", 19.99));
-        repository.save(new Book("To Kill a Mockingbird", "Harper Lee", 1960, "978-0415903626", 14.99));
+        
+        Book s1 = new Book("Kasvoton Kuolema", "Hennig Mankell", null, null, 12.0);
+        Book s2 = new Book("Riian Verikoirat", "Hennig Mankell", null, null, 13.0);
+       
+        
+     
+        repository.save(s1);
+        repository.save(s2);
+
+       
+        repository.findAll().forEach(book -> System.out.println(book.toString()));
     };
 }
+
+
 }
