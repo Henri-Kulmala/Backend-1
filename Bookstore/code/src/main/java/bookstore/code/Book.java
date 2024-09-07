@@ -1,22 +1,38 @@
 package bookstore.code;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String title;
     private String author;
-    private int publicationYear;
-    private int isbn;
+    private String isbn;
     private double price;
+    private Integer publicationYear;
 
-    
+    public Book() {}
 
-    public Book(String title, String author, int publicationYear, int isbn, double price) {
+    public Book(String title, String author, String isbn, Integer publicationYear, double price) {
         this.title = title;
         this.author = author;
-        this.publicationYear = publicationYear;
         this.isbn = isbn;
+        this.publicationYear = publicationYear;
         this.price = price;
+    }
 
+    public long getId() {
+        return id;
+    }
+    
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -35,19 +51,19 @@ public class Book {
         this.author = author;
     }
 
-    public int getPublicationYear() {
+    public Integer getYear() {
         return publicationYear;
     }
 
-    public void setPublicationYear(int publicationYear) {
+    public void setYear(Integer publicationYear) {
         this.publicationYear = publicationYear;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
@@ -58,6 +74,9 @@ public class Book {
     public void setPrice(double price) {
         this.price = price;
     }
-    
 
+    @Override
+    public String toString() {
+        return "Title: " + title + ", Author: " + author + ", Year: " + publicationYear + ", Price: " + price + ", ISBN: " + isbn;
+    }
 }
