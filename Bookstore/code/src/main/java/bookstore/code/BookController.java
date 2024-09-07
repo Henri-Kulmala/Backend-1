@@ -22,6 +22,7 @@ public class BookController {
     public String getParams(@RequestParam String param) {
         return "/index";
     }
+    
     @RequestMapping(value= {"/", "/booklist"})
     public String BookList(Model model) {
     model.addAttribute("books", repository.findAll());

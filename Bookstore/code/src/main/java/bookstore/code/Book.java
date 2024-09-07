@@ -2,12 +2,10 @@ package bookstore.code;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @Entity
-@Table(name = "BOOK")
 public class Book {
 
     @Id
@@ -17,15 +15,15 @@ public class Book {
     private String author;
     private String isbn;
     private double price;
-    private Integer year;
+    private Integer publicationYear;
 
     public Book() {}
 
-    public Book(String title, String author, String isbn, Integer year, double price) {
+    public Book(String title, String author, String isbn, Integer publicationYear, double price) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
-        this.year = year;
+        this.publicationYear = publicationYear;
         this.price = price;
     }
 
@@ -54,11 +52,11 @@ public class Book {
     }
 
     public Integer getYear() {
-        return year;
+        return publicationYear;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setYear(Integer publicationYear) {
+        this.publicationYear = publicationYear;
     }
 
     public String getIsbn() {
@@ -79,6 +77,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Title: " + title + ", Author: " + author + ", Year: " + year + ", Price: " + price + ", ISBN: " + isbn;
+        return "Title: " + title + ", Author: " + author + ", Year: " + publicationYear + ", Price: " + price + ", ISBN: " + isbn;
     }
 }
