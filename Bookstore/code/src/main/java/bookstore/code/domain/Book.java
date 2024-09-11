@@ -1,4 +1,4 @@
-package bookstore.code;
+package bookstore.code.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
