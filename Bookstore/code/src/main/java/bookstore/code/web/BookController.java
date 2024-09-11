@@ -1,4 +1,4 @@
-package bookstore.code;
+package bookstore.code.web;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import bookstore.code.domain.Book;
+import bookstore.code.domain.BookRepository;
 
 
 
