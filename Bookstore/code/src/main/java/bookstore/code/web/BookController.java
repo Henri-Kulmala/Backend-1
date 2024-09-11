@@ -23,11 +23,20 @@ public class BookController {
     @Autowired
     private BookRepository repository;
 
+<<<<<<< HEAD
     
     @GetMapping("/index")
     public String getParams(@RequestParam String param) {
         return "/index";
     }
+=======
+    @GetMapping("/")
+    public String home(Model model) {
+    return getBooks(model);  
+    }
+
+
+>>>>>>> bookstore1
     
     @GetMapping("/booklist")
     public String getBooks(Model model) {
