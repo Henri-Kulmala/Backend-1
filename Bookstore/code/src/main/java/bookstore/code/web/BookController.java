@@ -1,29 +1,28 @@
 package bookstore.code.web;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import bookstore.code.domain.Book;
-import bookstore.code.domain.BookRepository;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
+import bookstore.code.domain.Book;
+import bookstore.code.domain.BookRepository;
 
 
-@RestController
+
+
+
+@Controller
 public class BookController {
 
     @Autowired
@@ -76,16 +75,5 @@ public class BookController {
         return "redirect:/booklist";
         
     }
-
-    @GetMapping("/api/books")
-    public List<Book> getAllBooks() {
-        return (List<Book>) repository.findAll(); 
-    }
-
-    @GetMapping("/api/books/{id}")
-    public Book getBookById(@PathVariable("id") Long id) {
-    return repository.findById(id).orElse(null); 
-    }
-    
 
 }
