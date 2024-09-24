@@ -7,6 +7,8 @@ Tämä repositorio on omistettu Backend 1 kurssin tehtäville.
 Viikkotehtävät löytyvät omina ohjelminaan kansiosta */Backend-1/viikkotehtäviä*.
 Bookstore- tehtävä löytyy omasta kansiosta */Backend-1/Bookstore*.
 
+Uusimmat muutokset saattavat olla "Develop"- haaran alla :)
+
 
 
 
