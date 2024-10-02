@@ -1,14 +1,12 @@
 package bookstore.code.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-import java.util.List;
+
 
 @Entity
 public class Book {
@@ -31,10 +29,6 @@ public class Book {
         this.publicationYear = publicationYear;
         this.price = price;
     }
-
-    //@JsonIgnore
-    //@OneToMany(mappedBy="book")
-    //private List<-> -;
 
 
     public long getId() {
