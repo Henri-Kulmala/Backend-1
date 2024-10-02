@@ -28,6 +28,7 @@ public class RestBookController {
     }
 
     @GetMapping("/{id}")
+
     public Book getBookById(@PathVariable("id") Long id) {
     return repository.findById(id).orElse(null); 
     }
